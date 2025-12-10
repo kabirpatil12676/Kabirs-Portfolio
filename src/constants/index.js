@@ -260,7 +260,7 @@ const projects = [
       },
     ],
     image: chatApp,
-    source_code_link: "https://github.com/",
+    source_code_link: "https://github.com/kabirpatil12676/Aura_Chat_App",
   },
   {
     name: "🎧 Aura — Music Streaming Platform",
@@ -289,7 +289,7 @@ const projects = [
       },
     ],
     image: musicapp,
-    source_code_link: "https://github.com/",
+    source_code_link: "https://github.com/kabirpatil12676/Aura-Music-App",
   },
   {
     name: "Python Mini Projects",
@@ -303,7 +303,7 @@ const projects = [
       { name: "pandas", color: "blue-text-gradient" },
     ],
     image: pythonProjects,
-    source_code_link: "https://github.com/",
+    source_code_link: "https://github.com/kabirpatil12676/Python-Projects",
   },
 ];
 
