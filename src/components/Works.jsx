@@ -46,14 +46,14 @@ const ProjectCard = ({
   }, []);
 
   return (
-    <div ref={cardRef}>
+    <div ref={cardRef} className="h-full">
       <Tilt
         options={{
           max: 45,
           scale: 1,
           speed: 450,
         }}
-        className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full"
+        className="bg-tertiary p-5 rounded-2xl w-full h-full min-h-[520px] flex flex-col"
       >
         <div className="relative w-full h-[230px]">
           <img
@@ -76,9 +76,9 @@ const ProjectCard = ({
           </div>
         </div>
 
-        <div className="mt-5">
-          <h3 className="text-white font-bold text-[24px]">{name}</h3>
-          <p className="mt-2 text-secondary text-[14px]">{description}</p>
+        <div className="mt-5 flex-1 flex flex-col">
+          <h3 className="text-white font-bold text-[22px] md:text-[24px] leading-snug">{name}</h3>
+          <p className="mt-2 text-secondary text-[14px] md:text-[15px] leading-relaxed flex-1">{description}</p>
         </div>
 
         <div className="mt-4 flex flex-wrap gap-2">
@@ -98,26 +98,30 @@ const ProjectCard = ({
 
 const Works = () => {
   useEffect(() => {
-    // Stagger effect for project cards
-    gsap.fromTo(
-      ".project-card", // Select all project cards
-      {
-        opacity: 0,
-        y: 100,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        stagger: 0.1, // Stagger delay of 0.3 seconds between each card
-        scrollTrigger: {
-          trigger: ".works-container",
-          start: "top bottom",  // Trigger when the top of the container reaches the bottom
-          end: "top center",
-          scrub: true,
-          markers: false, // Set to true to see debug markers
-        },
-      }
-    );
+    const ctx = gsap.context(() => {
+      const cards = gsap.utils.toArray(".project-card");
+      cards.forEach((card, i) => {
+        gsap.fromTo(
+          card,
+          { opacity: 0, y: 60 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "power3.out",
+            delay: i * 0.08,
+            scrollTrigger: {
+              trigger: card,
+              start: "top 85%",
+              toggleActions: "play none none reverse",
+              once: true,
+            },
+          }
+        );
+      });
+    }, ".works-container");
+
+    return () => ctx.revert();
   }, []);
 
   return (
@@ -129,13 +133,13 @@ const Works = () => {
 
       <div className="w-full flex">
         <p className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]">
-          Following projects showcase my skills and experience through real-world examples of my work. Each project is briefly described with links to code repositories and live demos. It reflects my ability to solve complex problems, work with different technologies, and manage projects effectively.
+          A collection of my real-world work where web development meets data intelligence. These projects highlight how I build clean digital experiences while applying Python, analytics, and smart features to solve practical problems. Explore the code and demos to see my journey into intelligent, scalable, and user-focused solutions.
         </p>
       </div>
 
-      <div className="works-container mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center gap-5">
+      <div className="works-container mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center items-stretch gap-5">
         {projects.map((project, index) => (
-          <div key={`project-${index}`} className="project-card">
+          <div key={`project-${index}`} className="project-card h-full w-full flex">
             <ProjectCard index={index} {...project} />
           </div>
         ))}

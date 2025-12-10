@@ -3,6 +3,11 @@ import {
   logo,
   backend,
   creator,
+  onemb,
+  proxenixLogo,
+  path2Placement,
+  musicapp,
+  pythonProjects,
   mobile,
   web,
   github,
@@ -11,6 +16,7 @@ import {
   css,
   gearXpert,
   project2,
+  chatApp,
   project3,
   mysql,
   express,
@@ -59,19 +65,19 @@ export const navLinks = [
 
 const services = [
   {
-    title: "Full-Stack Developer",
+    title: "AI & Data Enthusiast",
     icon: web,
   },
   {
-    title: "Frontend Developer",
+    title: "Web Developer",
     icon: mobile,
   },
   {
-    title: "Backend Developer",
+    title: "Data Analyst (Python)",
     icon: backend,
   },
   {
-    title: "Ui UX Designer",
+    title: "UI/UX Focused Builder",
     icon: creator,
   },
 ];
@@ -154,16 +160,47 @@ const technologies = [
 
 const experiences = [
   {
-    title: "Full-Stack Developer",
-    company_name: "Tekisky",
-    icon: tekisky,
-    iconBg: "#383E56",
-    date: "Jan 2023 - present",
+    title: "Web Development Intern",
+    company_name: "Proxenix",
+    icon: proxenixLogo,
+    iconBg: "#E6DEDD",
+    date: "Jun 2025 - Jul 2025",
     points: [
-      "Developing and maintaining web applications using MERN technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Delivered features in 2+ full-stack web projects, improving functionality and performance.",
+      "Worked with a cross-functional team of 6, ensuring smooth communication and execution.",
+      "Implemented frontend and backend modules using modern web technologies and best practices.",
+      "Contributed code that enhanced user experience and reliability across multiple devices.",
+      "Recognized for consistent effort, timely delivery, and strong problem-solving abilities.",
+      "Tech & Skills: HTML • CSS • JavaScript • Node.js • Express • Socket.io • Git • Team Collaboration • Deployment • Debugging • Professional Communication",
+    ],
+  },
+  {
+    title: "Frontend Developer Intern",
+    company_name: "Path2Placement",
+    icon: path2Placement,
+    iconBg: "#E6DEDD",
+    date: "Jun 2025 - Jul 2025",
+    points: [
+      "Contributed to 3+ real-world frontend projects, improving UI usability and responsiveness.",
+      "Collaborated with a team of 5 developers to deliver clean and scalable components.",
+      "Improved page performance and layout consistency across 4+ devices & browsers.",
+      "Followed modern best practices, ensuring 100% responsive design and clean code standards.",
+      "Tech & Skills: HTML • CSS • JavaScript • React • Git • Team Collaboration • Debugging • Problem Solving • Communication",
+    ],
+  },
+  {
+    title: "Green Skills Intern",
+    company_name: "1M1B (1 Million for 1 Billion)",
+    icon: onemb,
+    iconBg: "#4B5563",
+    date: "Dec 2024 - Jan 2025",
+    points: [
+      "Completed 60 hours of structured sustainability training and real-world project work.",
+      "Gained hands-on experience in Tableau with 20 hours of data visualization tasks.",
+      "Applied green business practices through 20 hours of live sustainability projects.",
+      "Strengthened knowledge of SDGs, climate impact, and sustainable decision-making.",
+      "Delivered project insights with data-driven environmental analysis.",
+      "Tech & Skills: Sustainability • Tableau • Data Visualization • SDGs • Project Management • Research & Documentation • Environmental Awareness",
     ],
   },
 ];
@@ -171,101 +208,101 @@ const experiences = [
 const testimonials = [
   {
     testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Huzaif proved me wrong.",
-    name: "MD Mustaqeem",
-    designation: "Ecommerce",
-    company: "QuickMart",
+      "Kabir showed impressive dedication throughout his internship. His frontend improvements enhanced the user experience and made the product visually stronger.",
+    name: "Project Mentor",
+    designation: "Frontend Development Team",
+    company: "Path2Placement",
     image: firstTestimonial,
   },
   {
     testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Huzaif does.",
-    name: "Abdul Raheman",
-    designation: "Ecommerce Business",
-    company: "justbuyz",
+      "We valued Kabir’s reliability and problem-solving mindset. He contributed to web modules that made the platform smoother and more efficient for users.",
+    name: "Senior Engineer",
+    designation: "Web Development Division",
+    company: "Proxenix",
     image: secondTestimonial,
   },
   {
     testimonial:
-      "After Huzaif optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: "James Wang",
-    designation: "CTO",
-    company: "456 Enterprises",
+      "Kabir demonstrated strong analytical thinking during his green skills internship. His enthusiasm for sustainability and data visualization stood out in every task.",
+    name: "Program Coordinator",
+    designation: "Sustainability & Data Projects",
+    company: "1M1B (AICTE & Salesforce)",
     image: thirdTestimonial,
   },
 ];
 
 const projects = [
   {
-    name: "Tekisky Mart",
+    name: "💬 Aura Chat App",
     description:
-      "Tekisky Mart is a web-based platform that allows users to search, explore, and purchase a wide range of products from various providers, offering a seamless and efficient shopping experience.",
+      "A real-time communication app supporting direct messaging, groups, media sharing, and profile customization. Developed as a full-stack system to demonstrate scalable architecture and smooth user interactions.",
     tags: [
       {
         name: "react",
         color: "blue-text-gradient",
       },
       {
-        name: "tailwind",
-        color: "white-text-gradient",
-      },
-      {
-        name: "node",
-        color: "pink-text-gradient",
-      },
-      {
-        name: "mongodb",
+        name: "node.js",
         color: "green-text-gradient",
-      },
- 
-    ],
-    image: project2,
-    source_code_link: "https://github.com/",
-  },
-  {
-    name: "GearXpert",
-    description:
-      "GearXpert is your ultimate destination for premium auto parts and accessories, Whether you're an automobile enthusiast or a professional, find everything you need to upgrade, repair.",
-    tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "emailJs",
-        color: "green-text-gradient",
-      },
-      {
-        name: "Gsap",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: gearXpert,
-    source_code_link: "https://github.com/",
-  },
-  {
-    name: "GoGroove-Ecommerce",
-    description:
-      "Go-Groove is your ultimate destination for premium products across various categories. Whether you're a savvy shopper or a professional, enhance, and simplify your lifestyle—all in one place!",
-    tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
       },
       {
         name: "express",
         color: "white-text-gradient",
       },
       {
-        name: "node",
-        color: "green-text-gradient",
+        name: "socket.io",
+        color: "pink-text-gradient",
       },
       {
         name: "mongodb",
         color: "green-text-gradient",
       },
     ],
-    image: project3,
+    image: chatApp,
+    source_code_link: "https://github.com/",
+  },
+  {
+    name: "🎧 Aura — Music Streaming Platform",
+    description:
+      "A full-stack music streaming app where users can explore tracks, create playlists, and enjoy a seamless listening experience. Includes secure login, dynamic audio playback, and a modern interactive UI — inspired by leading streaming platforms.",
+    tags: [
+      {
+        name: "react",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "node.js",
+        color: "green-text-gradient",
+      },
+      {
+        name: "express",
+        color: "white-text-gradient",
+      },
+      {
+        name: "mongodb",
+        color: "green-text-gradient",
+      },
+      {
+        name: "firebase storage",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: musicapp,
+    source_code_link: "https://github.com/",
+  },
+  {
+    name: "Python Mini Projects",
+    description:
+      "A collection of small but impactful Python applications showcasing automation, API integration, GUI development, and beginner-friendly data handling. These projects highlight my problem-solving skills and growing focus toward data-driven development.",
+    tags: [
+      { name: "python", color: "blue-text-gradient" },
+      { name: "tkinter", color: "white-text-gradient" },
+      { name: "automation", color: "pink-text-gradient" },
+      { name: "apis", color: "green-text-gradient" },
+      { name: "pandas", color: "blue-text-gradient" },
+    ],
+    image: pythonProjects,
     source_code_link: "https://github.com/",
   },
 ];

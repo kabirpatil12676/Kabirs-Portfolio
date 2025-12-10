@@ -4,8 +4,6 @@ import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
 
 const Hero = () => {
-
-  
   return (
     <section className={`relative w-full h-screen mx-auto`}>
       <div
@@ -21,8 +19,7 @@ const Hero = () => {
             Hi, I'm <span className='text-[#915EFF]'>Kabir</span>
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            I develop modern, user <br/>
-            interfaces and web applications
+            Web Developer growing in Data Science and AI — crafting meaningful and data-driven solutions.
           </p>
         </div>
       </div>

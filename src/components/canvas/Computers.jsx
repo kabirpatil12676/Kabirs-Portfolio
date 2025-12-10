@@ -21,8 +21,8 @@ const Computers = () => {
       <pointLight intensity={1} />
       <primitive
         object={computer.scene}
-        scale={0.75} // Keep scale normal for desktop
-        position={[0, -3.25, -1.5]}
+        scale={0.75}
+        position={[1, -3.5, -1.8]} // Move model down to give more space above
         rotation={[-0.01, -0.2, -0.1]}
       />
     </mesh>
@@ -30,10 +30,10 @@ const Computers = () => {
 };
 
 const ComputersCanvas = () => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 500);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(max-width: 500px)");
+    const mediaQuery = window.matchMedia("(max-width: 768px)");
     
     const handleMediaQueryChange = (event) => {
       setIsMobile(event.matches);

@@ -1,6 +1,5 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
-import emailjs from "@emailjs/browser";
 
 import { styles } from "../styles";
 import { EarthCanvas } from "./canvas";
@@ -31,46 +30,31 @@ const Contact = () => {
     e.preventDefault();
     setLoading(true);
 
-    emailjs
-      .send(
-        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
-        {
-          from_name: form.name,
-          to_name: "Kabir Patil",
-          from_email: form.email,
-          to_email: "dev.kabirpatil12676@gmail.com",
-          message: form.message,
-        },
-        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
-      )
-      .then(
-        () => {
-          setLoading(false);
-          alert("Thank you. I will get back to you as soon as possible.");
+    // Send via mailto so the message reaches the inbox without external keys
+    const to = "kabirpatil12676@gmail.com";
+    const subject = `Portfolio Contact — ${form.name || "Visitor"}`;
+    const body = `From: ${form.name || "Anonymous"} (${form.email || "no email provided"})%0D%0A%0D%0A${form.message || ""
+      }`;
 
-          setForm({
-            name: "",
-            email: "",
-            message: "",
-          });
-        },
-        (error) => {
-          setLoading(false);
-          console.error(error);
+    const mailtoLink = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${body}`;
 
-          alert("Ahh, something went wrong. Please try again.");
-        }
-      );
+    window.location.href = mailtoLink;
+
+    setLoading(false);
+    setForm({
+      name: "",
+      email: "",
+      message: "",
+    });
   };
 
   return (
     <div
-      className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden`}
+      className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 md:gap-12 overflow-hidden`}
     >
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
-        className='flex-[0.75] bg-black-100 p-8 rounded-2xl'
+        className='flex-[0.75] bg-black-100 p-6 md:p-8 rounded-2xl'
       >
         <p className={styles.sectionSubText}>Get in touch</p>
         <h3 className={styles.sectionHeadText}>Contact.</h3>
@@ -125,7 +109,7 @@ const Contact = () => {
 
       <motion.div
         variants={slideIn("right", "tween", 0.2, 1)}
-        className='xl:flex-1 xl:h-auto md:h-[550px] h-[350px]'
+        className='xl:flex-1 xl:h-auto md:h-[520px] h-[320px]'
       >
         <EarthCanvas />
       </motion.div>

@@ -21,21 +21,24 @@ const FeedbackCard = ({ index, testimonial, name, designation, company, image })
       el,
       {
         opacity: 0,
-        y: 100, // Initial position off-screen
+        y: 40, // Initial position off-screen
       },
       {
         opacity: 1,
         y: 0,
+        duration: 0.8,
+        ease: "power3.out",
+        delay: index * 0.12,
         scrollTrigger: {
           trigger: el,
-          start: "top bottom", // Trigger when the top of the element reaches the bottom of the viewport
-          end: "top center",   // End the animation when the top reaches the center
-          scrub: true,         // Link the animation progress to the scroll position
-          markers: false,      // Set to true if you want to see the markers for debugging
+          start: "top 85%", // Trigger when the card is near the viewport
+          toggleActions: "play none none reverse",
+          once: true,
+          markers: false,
         },
       }
     );
-  }, []);
+  }, [index]);
 
   return (
     <div
@@ -70,15 +73,15 @@ const FeedbackCard = ({ index, testimonial, name, designation, company, image })
 
 const Feedbacks = () => {
   return (
-    <div className={`mt-12 bg-black-100 rounded-[20px]`}>
-      <div className={`bg-tertiary rounded-2xl ${styles.padding} min-h-[300px]`}>
+    <div className={`mt-12 bg-black-200/80 border border-white/5 rounded-[20px]`}>
+      <div className={`bg-tertiary/90 rounded-2xl ${styles.padding} min-h-[300px]`}>
         <div>
           <p className={styles.sectionSubText}>What others say</p>
           <h2 className={styles.sectionHeadText}>Testimonials.</h2>
         </div>
       </div>
       <div
-        className={`-mt-20 pb-14 ${styles.paddingX} grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10  justify-items-center`}
+        className={`-mt-20 pb-14 ${styles.paddingX} grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10 justify-items-center`}
       >
         {testimonials.map((testimonial, index) => (
           <FeedbackCard key={testimonial.name} index={index} {...testimonial} />
