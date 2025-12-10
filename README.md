@@ -44,6 +44,7 @@ Here you’ll find my best projects, skills, and achievements — all built with
 ## 🌟 Highlighted Projects
 | Project | Type | Tech |
 |--------|------|------|
+| Aura Music App      | Music Streaming Platform     | React, Node.js, Express, MongoDB *(MERN)*  |
 | Aura Chat App | Real-Time Messaging | React, Node, Socket.io, MongoDB |
 | Python Mini Projects | Automation & GUI Tools | Python, Tkinter, Requests, Pandas |
 
